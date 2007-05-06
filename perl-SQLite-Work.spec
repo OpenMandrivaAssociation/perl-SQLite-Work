@@ -1,7 +1,7 @@
 %define module	SQLite-Work
 %define name	perl-%{module}
-%define version 0.04
-%define	release	%mkrel 2
+%define version 0.09
+%define	release	%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -17,6 +17,7 @@ BuildRequires:	perl-DBD-SQLite
 BuildRequires:	perl-Getopt-ArgvFile
 BuildRequires:	perl-devel
 BuildRequires:  perl-Module-Build
+BuildRequires:  perl(Text::NeatTemplate)
 
 %description
 This generates HTML (and non-HTML) reports from an SQLite database, taking care
