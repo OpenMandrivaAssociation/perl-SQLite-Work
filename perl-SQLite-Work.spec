@@ -12,6 +12,7 @@ Group:		Development/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/R/RU/RUBYKAT/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	perl-DBD-SQLite
 BuildRequires:	perl-Getopt-ArgvFile
 BuildRequires:	perl-devel
