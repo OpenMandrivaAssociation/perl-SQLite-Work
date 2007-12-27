@@ -1,7 +1,7 @@
 %define module	SQLite-Work
 %define name	perl-%{module}
 %define version 0.09
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Name:		%{name}
 Version:	%{version}
