@@ -33,6 +33,7 @@ command-line.
 
 %prep
 %setup -q -n %{module}-%{version}
+find . -type f | xargs chmod +w
 
 %build
 %__perl Build.PL installdirs=vendor
