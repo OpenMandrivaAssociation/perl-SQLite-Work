@@ -9,15 +9,15 @@ Release:	%{release}
 Summary:	A Perl module to report on and update an SQLite database
 License:	GPL or Artistic
 Group:		Development/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/R/RU/RUBYKAT/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}
-BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	perl-DBD-SQLite
-BuildRequires:	perl-Getopt-ArgvFile
-BuildRequires:	perl-devel
-BuildRequires:  perl-Module-Build
+Source:     http://www.cpan.org/modules/by-module/SQLite/%{module}-%{version}.tar.gz
+BuildRequires:	perl(CGI)
+BuildRequires:	perl(DBD::SQLite)
+BuildRequires:	perl(Getopt::ArgvFile)
+BuildRequires:  perl(Module::Build)
 BuildRequires:  perl(Text::NeatTemplate)
+BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This generates HTML (and non-HTML) reports from an SQLite database, taking care
@@ -43,16 +43,16 @@ find . -type f | xargs chmod +w
 ./Build test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 ./Build install destdir=%{buildroot}
 
 %clean 
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
 %doc Changes README TODO *.cgi
-%{perl_vendorlib}/SQLite/*
+%{perl_vendorlib}/SQLite
 %{_mandir}/*/*
 %{_bindir}/*
 
