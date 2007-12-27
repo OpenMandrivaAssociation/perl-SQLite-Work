@@ -10,7 +10,7 @@ Summary:	A Perl module to report on and update an SQLite database
 License:	GPL or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/SQLite/%{module}-%{version}.tar.gz
+Source:     http://www.cpan.org/modules/by-module/SQLite/%{module}-%{version}.tar.bz2
 BuildRequires:	perl(CGI)
 BuildRequires:	perl(DBD::SQLite)
 BuildRequires:	perl(Getopt::ArgvFile)
