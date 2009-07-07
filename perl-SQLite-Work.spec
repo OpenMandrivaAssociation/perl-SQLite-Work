@@ -1,23 +1,23 @@
-%define module	SQLite-Work
-%define name	perl-%{module}
-%define version 0.09
-%define	release	%mkrel 5
+%define upstream_name	 SQLite-Work
+%define upstream_version 0.1002
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
+
 Summary:	A Perl module to report on and update an SQLite database
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/SQLite/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/SQLite/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(CGI)
 BuildRequires:	perl(DBD::SQLite)
 BuildRequires:	perl(Getopt::ArgvFile)
 BuildRequires:  perl(Module::Build)
 BuildRequires:  perl(Text::NeatTemplate)
-BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This generates HTML (and non-HTML) reports from an SQLite database, taking care
@@ -32,7 +32,7 @@ The sqlreport script uses SQLite::Work to generate reports from the
 command-line.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 find . -type f | xargs chmod +w
 
 %build
