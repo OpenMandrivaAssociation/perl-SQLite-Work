@@ -1,15 +1,15 @@
 %define upstream_name	 SQLite-Work
-%define upstream_version 0.1002
+%define upstream_version 0.1601
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	A Perl module to report on and update an SQLite database
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/SQLite/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/rubykat/SQLite-Work
+Source0:	https://cpan.metacpan.org/authors/id/R/RU/RUBYKAT/SQLite-Work-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(CGI)
