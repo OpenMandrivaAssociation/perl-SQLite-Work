@@ -1,15 +1,13 @@
 %define upstream_name	 SQLite-Work
-%define upstream_version 0.1601
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.1601
+Release:	2
 
 Summary:	A Perl module to report on and update an SQLite database
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/rubykat/SQLite-Work
-Source0:	https://cpan.metacpan.org/authors/id/R/RU/RUBYKAT/SQLite-Work-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/R/RU/RUBYKAT/SQLite-Work-%{version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(CGI)
@@ -32,7 +30,7 @@ The sqlreport script uses SQLite::Work to generate reports from the
 command-line.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 find . -type f | xargs chmod +w
 
 %build
@@ -55,8 +53,7 @@ perl Build.PL installdirs=vendor
 * Tue Jul 07 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.100.200-1mdv2010.0
 + Revision: 393241
 - update to 0.1002
-- using %%perl_convert_version
-- fixed license field
+- using %0.1601 fixed license field
 
 * Thu Jul 31 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.09-5mdv2009.0
 + Revision: 258382
